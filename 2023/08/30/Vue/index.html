@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="vuevue介绍Vue 是一套用于构建用户界面的 渐进式框架 。 与其它大型框架不同的是，Vue 采用自底向上增量开发的设计。 Vue 的核心库只关注视图层，并且非常容易学习，非常容易与其它库或已有项目整合。另一方面，Vue 完全有能力驱动采用单文件组件和Vue生态系统支持的库开发的复杂单页应用。 Vue.js 的目标是通过尽可能简单的 API 实现响应的数据绑定和组合的视图组件。 最初它不过是个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue2">
+<meta property="og:url" content="http://example.com/2023/08/30/Vue/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="vuevue介绍Vue 是一套用于构建用户界面的 渐进式框架 。 与其它大型框架不同的是，Vue 采用自底向上增量开发的设计。 Vue 的核心库只关注视图层，并且非常容易学习，非常容易与其它库或已有项目整合。另一方面，Vue 完全有能力驱动采用单文件组件和Vue生态系统支持的库开发的复杂单页应用。 Vue.js 的目标是通过尽可能简单的 API 实现响应的数据绑定和组合的视图组件。 最初它不过是个">
+<meta property="og:locale">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="article:published_time" content="2023-08-30T02:06:43.282Z">
+<meta property="article:modified_time" content="2023-09-04T02:42:14.802Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/404.jpg">
+
+
+<title >Vue2</title>
+
+<!-- Favicon -->
+
+    <link href='/log.svg?v=2.1.0-beta.1' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/log.svg?v=2.1.0-beta.1' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+    <link href='/log.svg?v=2.1.0-beta.1' rel='apple-touch-icon' sizes='180x180' ></link>
+
+
+    <link href='/site.webmanifest' rel='manifest' ></link>
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://npm.elemecdn.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="/css/plugins/font-awesome.min.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"example.com","author":"John Doe","root":"/","typed_text":["欢迎来到小橙的博客"],"theme_version":"2.1.0-beta.1","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"log.svg","icon16":"log.svg","icon32":"log.svg","appleTouchIcon":"log.svg","webmanifest":"/site.webmanifest","visibilitychange":true,"hidden":"failure.ico","showText":"(/≧▽≦/)咦！又好了！","hideText":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://npm.elemecdn.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2023-09-04 10:42:14"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.1.0-beta.1" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+ 
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
+          <div  id="content" class="trm-scroll-section">
+
+            <div class="locomotive-scroll__sticky-target" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none;"></div>
+
+            <!-- top bar -->
+            <header class="trm-top-bar">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" src="/log.svg">
+    
+    
+        <div class="trm-logo-text">
+            小<span>橙</span>
+        </div>
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/" target="">
+                    首页
+                </a>
+                
+                <ul>
+                    
+                    <li>
+                        <a  href="/archives2/" target="">
+                            archives2
+                        </a>
+                    </li>
+                    
+                </ul>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/archives/" target="">
+                    归档
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/class/" target="">
+                    分类
+                </a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
+
+			
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner" data-rellax data-rellax-direction="vertical">
+    
+    <!-- banner cover -->
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" data-rellax data-rellax-direction="vertical" data-rellax-speed="-10" src="/img/banner.png">
+    <!-- banner cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-4"></div>
+                
+                <div class="col-lg-8">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text ">
+                        <div class="trm-label trm-mb-20">
+                            NEWS LETTER
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            Vue2
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        2023
+                                    </span
+                                ></li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <a href="#about-triger" data-rellax-to="#about-triger" data-rellax-offset="-130" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </a>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+                <div id="page-sidebar" class="col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    <div class="trm-main-card-frame trm-sidebar">
+    <div class="trm-main-card"> 
+        <!-- card header -->
+<div class="trm-mc-header">
+    <div class="trm-avatar-frame trm-mb-20">
+        <img alt="Avatar" class="trm-avatar" src="/head.jpg">
+    </div>
+    <h5 class="trm-name trm-mb-15">
+        小橙
+    </h5>
+    
+        <div class="trm-label">
+            
+            <span class="trm-typed-text">
+                <!-- Words for theme.user.typedText -->
+            </span>
+        </div>
+    
+</div>
+<!-- card header end -->
+        <!-- sidebar social -->
+
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<div class="trm-social">
+    
+        <a href="https://github.com" title="微信" rel="nofollow" target="_blank">
+            <i class="iconfont fab fa-weixin"></i>
+        </a>
+    
+        <a href="/" title="qq" rel="nofollow" target="_blank">
+            <i class="iconfont fab fa-qq"></i>
+        </a>
+    
+        <a href="/" title="电话" rel="nofollow" target="_blank">
+            <i class="iconfont far fa-address-book"></i>
+        </a>
+    
+        <a href="/" title="邮箱" rel="nofollow" target="_blank">
+            <i class="iconfont fas fa-envelope"></i>
+        </a>
+    
+</div>
+
+<!-- sidebar social end -->
+        <!-- info -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<ul class="trm-table trm-mb-20">
+    
+        <li>
+            <div class="trm-label">
+                姓名:
+            </div>
+            <div class="trm-label trm-label-light">
+                陈凯
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                年龄:
+            </div>
+            <div class="trm-label trm-label-light">
+                20
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                地址:
+            </div>
+            <div class="trm-label trm-label-light">
+                北京
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                电话号:
+            </div>
+            <div class="trm-label trm-label-light">
+                18995287976
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                wx账号:
+            </div>
+            <div class="trm-label trm-label-light">
+                18995287976
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                企鹅账号:
+            </div>
+            <div class="trm-label trm-label-light">
+                1595606259
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                邮箱:
+            </div>
+            <div class="trm-label trm-label-light">
+                1595606259@qq.com
+            </div>
+        </li>
+    
+</ul>
+<!-- info end -->
+
+        
+    <div class="trm-divider trm-mb-40 trm-mt-40"></div>
+    <!-- action button -->
+    <div class="text-center">
+        <a href="mailto:admin@imalun.com" class="trm-btn">
+            联系我
+            <i class="iconfont far fa-envelope"></i>
+        </a>
+    </div>
+    <!-- action button end -->
+
+    </div>
+</div>
+                    <!-- main card end -->
+                </div>
+            
+            <div id="page-content" class="col-lg-8">
+                <div class="trm-content" id="trm-content">
+                    <div data-rellax data-rellax-repeat data-rellax-offset="500" id="about-triger"></div>
+
+                    <div id="post-info" class="row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
+            08/30
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-clock trm-icon"></i><br>
+            10:06
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-user trm-icon"></i><br>
+            John Doe
+        </div>
+    </div>
+</div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <h2 id="vue"><a href="#vue" class="headerlink" title="vue"></a>vue</h2><h3 id="vue介绍"><a href="#vue介绍" class="headerlink" title="vue介绍"></a>vue介绍</h3><p>Vue 是一套用于构建用户界面的 渐进式框架 。</p>
+<p>与其它大型框架不同的是，Vue 采用自底向上增量开发的设计。</p>
+<p>Vue 的核心库只关注视图层，并且非常容易学习，非常容易与其它库或已有项目整合。另一方面，Vue 完全有能力驱动采用单文件组件和Vue生态系统支持的库开发的复杂单页应用。</p>
+<p>Vue.js 的目标是通过尽可能简单的 API 实现响应的数据绑定和组合的视图组件。</p>
+<p>最初它不过是个人项目，时至今日，已成为全世界三大前端框架之一，github 上拥有 19.8万 Star。 领先于 React 和 Angular，在国内更是首选。</p>
+<h3 id="vue发展历程"><a href="#vue发展历程" class="headerlink" title="vue发展历程"></a>vue发展历程</h3><p><img src="http://laoxu.live/2023/08/09/vue2/image-20220717093650297.png" alt="image" loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'><br>自从Vue 2.0 发布之后，Vue 就成了前端领域的热门话题。</p>
+<p>2019.02.05，Vue 发布了 2.6.0 ，这是一个承前启后的版本，在它之后，推出了 3.0.0。</p>
+<p>2019.12.05，在万众期待中，尤雨溪公布了 Vue 3 源代码，此时的 Vue 3仍 处于 Alpha 版本。</p>
+<p>2020年09月18日，Vue.js 3.0 正式发布。</p>
+<h3 id="vue初体验"><a href="#vue初体验" class="headerlink" title="vue初体验"></a>vue初体验</h3><p>  1.想让vue工作，就必须创建一个Vue实例，且要传入一个配置对象<br>  2.root容器里的代码依然符合html规范，只不过混入了一些特殊的Vue语法<br>  3.root容器里的代码被称为Vue模板<br>  4.Vue 实例与容器是一一对应的<br>  5.真实开发中只有一个 Vue实例，并且会配合着组件一起使用<br>  6.中的 xxx 要写 js 表达式，且 xxx 可以自动读取到data中的所有属性<br>    区分：js表达式 和 js语句<br>    js表达式：一个表达式会产生一个值，可以放在任何一个需要值的地方<br>    1、a<br>    2、a+b<br>    3、fn(1)<br>    4、x&#x3D;&#x3D;&#x3D; y ? ‘1’ : ‘2’<br>    js语句<br>    1、if(){}<br>    2、for(){}<br>  7.一旦data中的数据发生变化，那么模板中用到该数据的地方也会自动更新</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">  &lt;!DOCTYPE html&gt;</span><br><span class="line">   &lt;html lang=<span class="string">&quot;en&quot;</span>&gt;</span><br><span class="line">   &lt;<span class="built_in">head</span>&gt;</span><br><span class="line">       &lt;meta charset=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><br><span class="line">       &lt;meta http-equiv=<span class="string">&quot;X-UA-Compatible&quot;</span> content=<span class="string">&quot;IE=edge&quot;</span>&gt;</span><br><span class="line">       &lt;meta name=<span class="string">&quot;viewport&quot;</span> content=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span><br><span class="line">       &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">       &lt;!-- 本地资源引入 当我们将vue.js引入后 页面上就多了一个Vue构造函数--&gt;</span><br><span class="line">       &lt;script src=<span class="string">&quot;../vue.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">       &lt;!-- CDN方式引入 --&gt;</span><br><span class="line">       &lt;!-- &lt;script src=<span class="string">&quot;url&quot;</span>&gt;&lt;/script&gt; --&gt;</span><br><span class="line">   &lt;/head&gt;</span><br><span class="line">   &lt;body&gt;</span><br><span class="line">       &lt;!-- 将来创建的vue实例对象所控制的区域 v:视图--&gt;</span><br><span class="line">       &lt;div <span class="built_in">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span><br><span class="line">           &lt;!-- &#123;&#123;&#125;&#125;: 插值表达式 --&gt;</span><br><span class="line">           &#123;&#123; msg &#125;&#125;</span><br><span class="line">       &lt;/div&gt;</span><br><span class="line">   </span><br><span class="line">       &lt;script&gt;</span><br><span class="line">           //阻止 vue在启动时生成生产提示。</span><br><span class="line">           Vue.config.productionTip = <span class="literal">false</span></span><br><span class="line">           </span><br><span class="line">           // 创建vue实例 =&gt; vm</span><br><span class="line">           <span class="built_in">let</span> vm = new Vue(&#123;</span><br><span class="line">               // 写法一: new Vue的时候指定el属性</span><br><span class="line">               // el用于指定当前Vue实例为哪个容器服务，值通常为css选择器字符串</span><br><span class="line">               el: <span class="string">&#x27;#app&#x27;</span>, </span><br><span class="line">               // data中用于存储数据，数据供el所指定的容器去使用，值暂时先写成一个对象, 相当于model层</span><br><span class="line">               data: &#123;</span><br><span class="line">                   msg: <span class="string">&#x27;hello vue !&#x27;</span></span><br><span class="line">               &#125;,</span><br><span class="line">               // 方法</span><br><span class="line">               methods: &#123;&#125;,</span><br><span class="line">           &#125;)</span><br><span class="line">          // 写法二: 先创建Vue实例，随后再通过vm.<span class="variable">$mount</span>(<span class="string">&#x27;#root&#x27;</span>)指定el的值</span><br><span class="line">           vm.<span class="variable">$mount</span>(<span class="string">&#x27;#app&#x27;</span>)</span><br><span class="line">       &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="MVC和MVVM"><a href="#MVC和MVVM" class="headerlink" title="MVC和MVVM"></a>MVC和MVVM</h3><h3 id="MVVM有两个方向"><a href="#MVVM有两个方向" class="headerlink" title="MVVM有两个方向"></a>MVVM有两个方向</h3><pre><code>1.将model（模型）转化成 view（视图），即后端传递的数据转化成所看到的页面。实现
+方式为数据绑定
+2.将view（视图）转化成 model（模型），即将所看的页面转化成后端的数据。实现方式
+为dom监听事件
+</code></pre>
+<h4 id="什么是mvc"><a href="#什么是mvc" class="headerlink" title="什么是mvc"></a>什么是mvc</h4><pre><code>MVC是model-view-controller的缩写，即模型——视图——控制器。M和V指的意思和MVVM中
+M和V意思一样。C即Controller指的是页面业务逻辑。使用MVC的目的就是将M和V的代码分
+离。MVC是单向通信。也就是View跟Model，必须通过Controller来承上启下。
+</code></pre>
+<h4 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h4><pre><code>MVC和MVVM的区别并不是VM完全取代了C，只是在MVC的基础上增加了一层VM，只不过是弱化
+了C的概念，ViewModel存在目的在于抽离Controller中展示的业务逻辑，而不是替代
+Controller，其它视图操作业务等还是应该放在Controller中实现。
+View更新的时候，必须要通过Controller去更新一遍Model；同样的Model更新的时候，
+也要去更新一遍视图。
+</code></pre>
+<h3 id="组件和模块"><a href="#组件和模块" class="headerlink" title="组件和模块"></a>组件和模块</h3><h4 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h4><pre><code>把重复代码提取出来合并成为一个组件，组件最重要的是复用，位于框架最底层，其他功能
+依赖于组件，可供不同功能使用，独立性强
+</code></pre>
+<h4 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h4><pre><code>分属同一功能/业务的代码进行隔离（分装）成独立的模块，可以独立运行，以页面、功能
+或其他不同粒度划分程度不同的模块。位于业务框架层，模块间通过接口调用，目的是降低
+模块间的耦合，由之前的主应用与模块耦合，变为主应用与接口耦合，接口与模块耦合
+[比喻]模块就像有多个USB插口的充电宝，可以和多部手机充电，接口可以随意插拔。复用
+性很强，可以独立管理。
+</code></pre>
+<h4 id="组件化模块化区别"><a href="#组件化模块化区别" class="headerlink" title="组件化模块化区别"></a>组件化模块化区别</h4><pre><code>1.组件相当于库，把一些能在项目里或者不同类型项目中可复用的代码进行封装
+2.而模块相当于业务逻辑模块，把同一类型项目里的功能逻辑进行需求性的封装
+</code></pre>
+<h4 id="为什么要用组件和模块"><a href="#为什么要用组件和模块" class="headerlink" title="为什么要用组件和模块"></a>为什么要用组件和模块</h4><pre><code>1.开发和调式效率高
+2.可维护性强
+3.避免阻断
+4.版本管理更容易
+</code></pre>
+<h3 id="vue模板使用"><a href="#vue模板使用" class="headerlink" title="vue模板使用"></a>vue模板使用</h3><p>  模板就是动态html页面，这里面包含了一些js语法代码</p>
+<h4 id="插值"><a href="#插值" class="headerlink" title="插值"></a>插值</h4><p>  数据绑定最常见的形式就是使用“Mustache”语法 (双大括号) 的文本插值：<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span&gt;Message: &#123;&#123; msg &#125;&#125;&lt;/span&gt;</span><br></pre></td></tr></table></figure><br>  Mustache 标签将会被替代为对应数据对象上 msg property 的值。无论何时，绑定的数据对象上 msg property 发生了改变，插值处的内容都会更新。</p>
+<p>  通过使用 v-once 指令，你也能执行一次性地插值，当数据改变时，插值处的内容不会更新。但请留心这会影响到该节点上的其它数据绑定：<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span v-once&gt;这个将不会改变: &#123;&#123; msg &#125;&#125;&lt;/span&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h4><pre><code>v-once :只会执行一次渲染，当数据发生改变时，不会再变化
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;div <span class="built_in">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span><br><span class="line">    &lt;p v-once&gt;&#123;&#123;msg&#125;&#125;&lt;/p&gt;</span><br><span class="line">    &lt;input v-model=<span class="string">&quot;msg&quot;</span> <span class="built_in">type</span>=<span class="string">&quot;text&quot;</span> /&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="built_in">let</span> vue = new Vue(&#123;</span><br><span class="line">        el:<span class="string">&quot;#app&quot;</span>,</span><br><span class="line">        data:&#123;</span><br><span class="line">            msg:<span class="string">&#x27;今天气温&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script</span><br></pre></td></tr></table></figure>
+v-show:v-show接受一个表达式或一个布尔值。相当于给元素添加一个display属性
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">  &lt;div <span class="built_in">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span><br><span class="line">&lt;div v-show=<span class="string">&quot;conditional ==  &#x27;ok&#x27; &quot;</span>&gt;&#123;&#123;msg&#125;&#125;&lt;/div&gt;</span><br><span class="line">&lt;input v-model=<span class="string">&quot;msg&quot;</span> <span class="built_in">type</span>=<span class="string">&quot;text&quot;</span> /&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="built_in">let</span> vue = new Vue(&#123;</span><br><span class="line">        el:<span class="string">&quot;#app&quot;</span>,</span><br><span class="line">        data:&#123;</span><br><span class="line">            msg:<span class="string">&#x27;今天气温&#x27;</span>,</span><br><span class="line">            conditional:<span class="string">&#x27;ok&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+v-if、v-else、v-else-if:v-if和v-show有同样的效果，不同在于v-if是重新渲染，
+而v-show使用display属性来控制显示隐藏。
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">  &lt;div <span class="built_in">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      小明评级为：&lt;span v-if=<span class="string">&quot;score &gt;= 90&quot;</span>&gt;优秀&lt;/span&gt;</span><br><span class="line">      &lt;span v-else-if=<span class="string">&quot;score &gt;= 80&quot;</span>&gt;良好&lt;/span&gt;</span><br><span class="line">      &lt;span v-else-if=<span class="string">&quot;score &gt;= 60&quot;</span>&gt;及格&lt;/span&gt;</span><br><span class="line">      &lt;span v-else&gt;不及格&lt;/span&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    new Vue(&#123;</span><br><span class="line">        el:<span class="string">&quot;#app&quot;</span>,</span><br><span class="line">        data:&#123;</span><br><span class="line">            msg:<span class="string">&#x27;message&#x27;</span>,</span><br><span class="line">            score:59,  </span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+v-for:v-for可用来遍历数组、对象、字符串。
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">  &lt;div <span class="built_in">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span><br><span class="line">&lt;!-- obj --&gt;</span><br><span class="line">&lt;div v-for=<span class="string">&quot;(att,val) in obj&quot;</span>&gt;</span><br><span class="line">    &#123;&#123;att&#125;&#125;:&#123;&#123;val&#125;&#125;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;!-- arr --&gt;</span><br><span class="line">&lt;div v-for=<span class="string">&quot;(val, index) in arr&quot;</span>&gt;</span><br><span class="line">    &#123;&#123;index&#125;&#125;:&#123;&#123;val&#125;&#125;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;!-- string --&gt;</span><br><span class="line">&lt;div v-for=<span class="string">&quot;astr in str&quot;</span>&gt;</span><br><span class="line">    &#123;&#123;astr&#125;&#125;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    new Vue(&#123;</span><br><span class="line">        el:<span class="string">&quot;#app&quot;</span>,</span><br><span class="line">        data:&#123;</span><br><span class="line">            obj:&#123;</span><br><span class="line">                name:<span class="string">&#x27;kk&#x27;</span>,</span><br><span class="line">                age:<span class="string">&#x27;18&#x27;</span>,</span><br><span class="line">                hobby:<span class="string">&#x27;pingpong&#x27;</span></span><br><span class="line">            &#125;,</span><br><span class="line">            arr:[</span><br><span class="line">                1,2,3,4,4,5,6,7</span><br><span class="line">            ],</span><br><span class="line">            str:<span class="string">&#x27;str hello world&#x27;</span></span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</code></pre>
+<p>  v-bind:是用可以将标签内的属性值解析成js代码，在标签的属性中使用v-bind，<br>  双引号里的内容会被当作js解析（只能解析变量或三元表达式）<br>  如果给属性值设置为一个变量，那么可以使用v-bind<br>  可以缩写为:&lt;属性&gt;&#x3D;”&lt;变量&gt;”<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">     &lt;div <span class="built_in">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span><br><span class="line">     &lt;!-- 完整写法 v-bind: --&gt;</span><br><span class="line">     &lt;div v-bind:class=<span class="string">&quot;className&quot;</span>&gt;<span class="string">&quot;&#123;&#123;innerHtml&#125;&#125;&quot;</span>&lt;/div&gt;</span><br><span class="line">     &lt;!-- 缩写 : --&gt;</span><br><span class="line">     &lt;div :class=<span class="string">&quot;className&quot;</span>&gt;<span class="string">&quot;&#123;&#123;innerHtml&#125;&#125;&quot;</span>&lt;/div&gt;</span><br><span class="line">     &lt;div v-text=<span class="string">&quot;innerHtml&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line">     &lt;div v-html=<span class="string">&quot;innerHtml&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    new Vue(&#123;</span><br><span class="line">        el:<span class="string">&quot;#app&quot;</span>,</span><br><span class="line">        data:&#123;</span><br><span class="line">            innerHtml:<span class="string">&#x27;&lt;button&gt;一个按钮&lt;/button&gt;&#x27;</span>,</span><br><span class="line">            className:<span class="string">&#x27;box&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure><br>  v-on:v-on用于事件绑定<br>  语法: v-on:&lt;事件类型&gt;&#x3D;”&lt;函数名&gt;”<br>  简写：@&lt;事件类型&gt;&#x3D;”&lt;函数名&gt;”<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;div <span class="built_in">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span><br><span class="line">        &lt;!-- 完整写法 v-on: --&gt;</span><br><span class="line">        &lt;div v-on:click=<span class="string">&quot;clickfunc&quot;</span>&gt;点击事件&lt;/div&gt;</span><br><span class="line">        &lt;!-- 缩写 @ --&gt;</span><br><span class="line">        &lt;div @click=<span class="string">&quot;clickfunc&quot;</span>&gt;点击事件&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    new Vue(&#123;</span><br><span class="line">        el:<span class="string">&quot;#app&quot;</span>,</span><br><span class="line">        data:&#123;</span><br><span class="line">        &#125;,</span><br><span class="line">        methods:&#123;</span><br><span class="line">         // 定义一个 点击函数   </span><br><span class="line">            clickfunc:<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">                console.dir(<span class="string">&#x27;click event&#x27;</span>)</span><br><span class="line">            &#125;    </span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure><br>  v-model:双向数据绑定,限制在 input、select、textarea、components中使用<br>  语法： v-model&#x3D;”&lt;变量名&gt;”</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">    &lt;body&gt;</span><br><span class="line">    &lt;div <span class="built_in">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span><br><span class="line">        &lt;div&gt;val的值:&#123;&#123;val&#125;&#125;&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;val的值:&#123;&#123;val&#125;&#125;&lt;/div&gt;</span><br><span class="line">        &lt;input v-model=<span class="string">&quot;val&quot;</span>&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    new Vue(&#123;</span><br><span class="line">        el:<span class="string">&quot;#app&quot;</span>,</span><br><span class="line">        data:&#123;</span><br><span class="line">            val:<span class="string">&#x27;success&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="vue生命周期"><a href="#vue生命周期" class="headerlink" title="vue生命周期"></a>vue生命周期</h3><p>  Vue的生命周期就是vue实例从创建到销毁的全过程，也就是new Vue() 开始就是vue生命周期的开始。Vue 实例有⼀个完整的⽣命周期，也就是从开始创建、初始化数据、编译模版、挂载Dom -&gt; 渲染、更新 -&gt; 渲染、卸载 等⼀系列过程，称这是Vue的⽣命周期。钩子函数是Vue生命周期中每个阶段对外开放让程序员操作Vue的接口。Vue有8个钩子函数。</p>
+<h4 id="beforeCreate-创建前"><a href="#beforeCreate-创建前" class="headerlink" title="beforeCreate( 创建前 )"></a>beforeCreate( 创建前 )</h4><p>  这个时候，在实例被完成创建出来，el和data都没有初始化，不能访问data、method，一般在这个阶段不进行操作。<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  <span class="function"><span class="title">beforeCreate</span></span>() &#123;</span><br><span class="line">  console.log(<span class="string">&#x27;----beforeCreate----&#x27;</span>)</span><br><span class="line">  console.log(this.msg) //undefined</span><br><span class="line">  console.log(this.<span class="variable">$el</span>) //undefined</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
+<h4 id="created-创建后"><a href="#created-创建后" class="headerlink" title="created( 创建后 )"></a>created( 创建后 )</h4><p>  这个时候，vue实例中的data、method已被初始化，属性也被绑定，但是此时还是虚拟dom，真是dom还没生成，$el 还不可用。这个时候可以调用data和method的数据及方法，created钩子函数是最早可以调用data和method的，故一般在此对数据进行初始化。<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  <span class="function"><span class="title">created</span></span>() &#123;</span><br><span class="line">  console.log(<span class="string">&#x27;----created----&#x27;</span>)</span><br><span class="line">  console.log(this.msg)	//msg</span><br><span class="line">  console.log(this.<span class="variable">$el</span>)	//undefined</span><br><span class="line">&#125;,</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<h4 id="beforeMount-挂载前"><a href="#beforeMount-挂载前" class="headerlink" title="beforeMount( 挂载前)"></a>beforeMount( 挂载前)</h4><p>  此时模板已经编译完成，但还没有被渲染至页面中（即为虚拟dom加载为真实dom），此时el存在则会显示el。在这里可以在渲染前最后一次更改数据的机会，不会触发其他的钩子函数，一般可以在这里做初始数据的获取。<br>  当vue实例中，el为挂载目标，未对el进行定义，则this.el显示undefined，但页面中存在template也能识别挂载目标，因为template可以被看成占位符。如果对其进行定义则显示<div id="app"></div>，故所以，beforeMount读取不了真实的el，在mounted才能读取到真实的el，因为el只有渲染完成后才会存在。这里讲的el是真实的el。在真实的el之前存在前，在beforeMount中的其实是页面中的#app，是挂载的目标。<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="title">beforeMount</span></span>() &#123;</span><br><span class="line">  console.log(<span class="string">&#x27;----beforeMount----&#x27;</span>)</span><br><span class="line">  console.log(this.msg)	//msg</span><br><span class="line">  console.log(this.<span class="variable">$el</span>)	//undefined</span><br><span class="line">&#125;,</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<h4 id="Mounted-挂载后"><a href="#Mounted-挂载后" class="headerlink" title="Mounted( 挂载后)"></a>Mounted( 挂载后)</h4><p>  此时模板已经被渲染成真实DOM，用户已经可以看到渲染完成的页面，页面的数据也是通过双向绑定显示data中的数据。 这实例创建期间的最后一个生命周期函数，当执行完 mounted 就表示，实例已经被完全创建好了，此时，如果没有其它操作的话，这个实例，就静静的躺在我们的内存中，一动不动。<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  <span class="function"><span class="title">mounted</span></span>() &#123;</span><br><span class="line">  console.log(<span class="string">&#x27;----mounted----&#x27;</span>)</span><br><span class="line">  console.log(this.msg)	//msg</span><br><span class="line">  console.log(this.<span class="variable">$el</span>)	//&lt;div <span class="built_in">id</span>=<span class="string">&quot;app&quot;</span>&gt;&lt;span model=<span class="string">&quot;msg&quot;</span>&gt;&lt;/span&gt;&lt;/div&gt;</span><br><span class="line">&#125;,</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<h4 id="beforeUpdate-更新前状态"><a href="#beforeUpdate-更新前状态" class="headerlink" title="beforeUpdate (更新前状态)"></a>beforeUpdate (更新前状态)</h4><p>  更新前状态（view层的数据变化前，不是data中的数据改变前），重新渲染之前触发，然后vue的虚拟dom机制会重新构建虚拟dom与上一次的虚拟dom树利用diff算法进行对比之后重新渲染。只有view上面的数据变化才会触发beforeUpdate和updated，仅属于data中的数据改变是并不能触发。</p>
+<h4 id="updated"><a href="#updated" class="headerlink" title="updated"></a>updated</h4><p>  数据已经更改完成，dom也重新render完成。</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">    &lt;template&gt;</span><br><span class="line">  &lt;div <span class="built_in">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span><br><span class="line">    &lt;div style=<span class="string">&quot;height:50px&quot;</span></span><br><span class="line">         ref=<span class="string">&quot;spanRef&quot;</span>&gt;&#123;&#123;msg&#125;&#125;&lt;/div&gt;</span><br><span class="line">    &lt;button @click=<span class="string">&quot;clickBtn&quot;</span>&gt;&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="built_in">export</span> default &#123;</span><br><span class="line">  name: <span class="string">&#x27;App&#x27;</span>,</span><br><span class="line">  <span class="function"><span class="title">data</span></span>() &#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">      msg: <span class="string">&#x27;msg&#x27;</span>,</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    <span class="function"><span class="title">clickBtn</span></span>() &#123;</span><br><span class="line">      this.msg = <span class="string">&#x27;newMsg&#x27;</span></span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="function"><span class="title">beforeUpdate</span></span>() &#123;</span><br><span class="line">    console.log(<span class="string">&#x27;----beforeUpdate----&#x27;</span>)</span><br><span class="line">    console.log(this.<span class="variable">$refs</span>.<span class="variable">$el</span>)</span><br><span class="line">    console.log(this.msg) //msg</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="function"><span class="title">updated</span></span>() &#123;</span><br><span class="line">    console.log(<span class="string">&#x27;----updated----&#x27;</span>)</span><br><span class="line">    console.log(this.<span class="variable">$refs</span>.<span class="variable">$el</span>)</span><br><span class="line"></span><br><span class="line">    console.log(this.msg) //msg</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="beforeDestroy-销毁前"><a href="#beforeDestroy-销毁前" class="headerlink" title="beforeDestroy(销毁前)"></a>beforeDestroy(销毁前)</h4><p>  销毁前执行（$destroy方法被调用的时候就会执行）,一般在这里善后:清除计时器、清除非指令绑定的事件等等…’)</p>
+<h4 id="destroyed"><a href="#destroyed" class="headerlink" title="destroyed"></a>destroyed</h4><p>  销毁后 （Dom元素存在，只是不再受vue控制）,卸载watcher，事件监听，子组件。</p>
+<h3 id="watch"><a href="#watch" class="headerlink" title="watch"></a>watch</h3><h4 id="watch是什么"><a href="#watch是什么" class="headerlink" title="watch是什么"></a>watch是什么</h4><p>  watch：侦听器，是Vue实例的一个属性，是用来响应数据的变化，需要在数据变化时执行异步或开销较大的操作时，这个方式是最有用的。</p>
+<h4 id="watch的基础用法"><a href="#watch的基础用法" class="headerlink" title="watch的基础用法"></a>watch的基础用法</h4>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">    watch: &#123;</span><br><span class="line">	被监听的数据: &#123;</span><br><span class="line">		handler(数据改变后的值, 数据改变之前的值) &#123;</span><br><span class="line">			相关代码逻辑...</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>  1.被监听的数据：data中定义的数据；<br>  2.数据改变后的值：该数据改变后的新值；<br>  3.数据改变之前的值：该数据改变之前的值。</p>
+<h4 id="watch监听单个简单数据类型"><a href="#watch监听单个简单数据类型" class="headerlink" title="watch监听单个简单数据类型"></a>watch监听单个简单数据类型</h4>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">    &lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    输入: &lt;input <span class="built_in">type</span>=<span class="string">&quot;text&quot;</span> v-model=<span class="string">&quot;text&quot;</span>&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="built_in">export</span> default &#123;</span><br><span class="line">  name: <span class="string">&quot;Home&quot;</span>,</span><br><span class="line">  <span class="function"><span class="title">data</span></span>() &#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">      text: <span class="string">&quot;&quot;</span>,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  watch: &#123;</span><br><span class="line">    text: &#123;</span><br><span class="line">      handler(newVal, oldVal) &#123;</span><br><span class="line">        console.log(`新的值: <span class="variable">$&#123;newVal&#125;</span>`);</span><br><span class="line">        console.log(`旧的值: <span class="variable">$&#123;oldVal&#125;</span>`);</span><br><span class="line">        console.log(<span class="string">&quot;------------------&quot;</span>);</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="监听复杂数据类型的某个属性的变化"><a href="#监听复杂数据类型的某个属性的变化" class="headerlink" title="监听复杂数据类型的某个属性的变化"></a>监听复杂数据类型的某个属性的变化</h4>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">    &lt;script&gt;</span><br><span class="line"><span class="built_in">export</span> default &#123;</span><br><span class="line">  name: <span class="string">&quot;Home&quot;</span>,</span><br><span class="line">  <span class="function"><span class="title">data</span></span>() &#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">      person: &#123;</span><br><span class="line">      	name: <span class="string">&quot;&quot;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  watch: &#123;</span><br><span class="line">   <span class="string">&quot;person.name&quot;</span>: &#123;</span><br><span class="line">      handler(newVal, oldVal) &#123;</span><br><span class="line">        console.log(`新的值: <span class="variable">$&#123;newVal&#125;</span>`);</span><br><span class="line">        console.log(`旧的值: <span class="variable">$&#123;oldVal&#125;</span>`);</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>  检测某个属性值的时候需要用对象.属性名的写法，用法和简单数据类型一致。</p>
+<h4 id="immediate-立即处理-进入页面就触发"><a href="#immediate-立即处理-进入页面就触发" class="headerlink" title="immediate (立即处理 进入页面就触发)"></a>immediate (立即处理 进入页面就触发)</h4><p>immediate 设为true，进入页面会立即执行handler函数。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">  &lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    输入: &lt;input <span class="built_in">type</span>=<span class="string">&quot;text&quot;</span> v-model=<span class="string">&quot;text&quot;</span>&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="built_in">export</span> default &#123;</span><br><span class="line">  name: <span class="string">&quot;Home&quot;</span>,</span><br><span class="line">  <span class="function"><span class="title">data</span></span>() &#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">      text: <span class="string">&quot;&quot;</span>,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  watch: &#123;</span><br><span class="line">    text: &#123;</span><br><span class="line">      handler(newVal, oldVal) &#123;</span><br><span class="line">        </span><br><span class="line">      &#125;,</span><br><span class="line">      immediate: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="deep-深度监听"><a href="#deep-深度监听" class="headerlink" title="deep 深度监听"></a>deep 深度监听</h4><p>对象和数组都是复杂数据类型，复杂数据类型存的是地址值，地址没有变，不会触发watch。这时我们需要进行深度监听，就需要加上一个属性 deep，值设为 true，使用deep属性可以监测到整个对象所有属性值的变化，某个属性发生变化，watch都会触发监听该对象。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">  &lt;script&gt;</span><br><span class="line"><span class="built_in">export</span> default &#123;</span><br><span class="line">  name: <span class="string">&quot;Home&quot;</span>,</span><br><span class="line">  <span class="function"><span class="title">data</span></span>() &#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">      person: &#123;</span><br><span class="line">      	name: <span class="string">&quot;&quot;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  watch: &#123;</span><br><span class="line">   person: &#123;</span><br><span class="line">      handler(newVal, oldVal) &#123;</span><br><span class="line">        </span><br><span class="line">      &#125;,</span><br><span class="line">      deep: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="watch简写形式"><a href="#watch简写形式" class="headerlink" title="watch简写形式"></a>watch简写形式</h4><p>如果只是监听单个简单的数据，使用watch的简写形式就可以满足需求。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">  &lt;script&gt;</span><br><span class="line"><span class="built_in">export</span> default &#123;</span><br><span class="line">  name: <span class="string">&quot;Home&quot;</span>,</span><br><span class="line">  <span class="function"><span class="title">data</span></span>() &#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">      text: <span class="string">&quot;&quot;</span></span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  watch: &#123;</span><br><span class="line">    text(newVal, oldVal) &#123;</span><br><span class="line">      </span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="computed和watch"><a href="#computed和watch" class="headerlink" title="computed和watch"></a>computed和watch</h3><h4 id="区别-1"><a href="#区别-1" class="headerlink" title="区别"></a>区别</h4><pre><code>  1、computed是有缓存的  watch没有
+  2、computed一般执行同步操作 异步操作在watch中实现
+  3、computed监听的那个数据的数据发生变化时,不会重新计算,只有依赖的数据发生变
+    化时才会重新调用getter来计算
+  watch监听的数据发生变化时 立马执行相应的回调函数重新计算
+</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    var vm = new Vue(&#123;</span><br><span class="line">        el: <span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">        data: &#123;</span><br><span class="line">            firstName: <span class="string">&#x27;Foo&#x27;</span>,</span><br><span class="line">            lastName: <span class="string">&#x27;Bar&#x27;</span>,</span><br><span class="line">            fullName: <span class="string">&#x27;Foo Bar&#x27;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        // 侦听器的方式</span><br><span class="line">        watch: &#123;</span><br><span class="line">            firstName: <span class="keyword">function</span> (val) &#123;</span><br><span class="line">                this.fullName = val + <span class="string">&#x27; &#x27;</span> + this.lastName</span><br><span class="line">            &#125;,</span><br><span class="line">            lastName: <span class="keyword">function</span> (val) &#123;</span><br><span class="line">                this.fullName = this.firstName + <span class="string">&#x27; &#x27;</span> + val</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        // 计算属性的方式</span><br><span class="line">        computed: &#123;</span><br><span class="line">            <span class="function"><span class="title">fullName</span></span>() &#123;</span><br><span class="line">                this.fullName = this.firstName + <span class="string">&#x27; &#x27;</span> + this.lastName</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">     </span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="vue-cli"><a href="#vue-cli" class="headerlink" title="vue-cli"></a>vue-cli</h3><h4 id="vue-cli-1"><a href="#vue-cli-1" class="headerlink" title="vue-cli"></a>vue-cli</h4><p>  vue-cli是vue官方出品的快速构建单页应用的脚手架,里面集成了webpack,npm,node.js,babel,vue,vue-router…<br>  安装:npm i -g@vue&#x2F;cli<br>  初始化项目:vue creat 项目名<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">node_modules : 项目安装的包 插件</span><br><span class="line">public: 公共的资源 (第一种方式配置devserver跨域会默认从这先查找)</span><br><span class="line">favicon.ico 网站图标</span><br><span class="line">index.html 单页应用的html入口</span><br><span class="line">src: 源码</span><br><span class="line">assets: 静态资源（图片、css样式等）</span><br><span class="line">components: 组件</span><br><span class="line">App.vue: 根组件</span><br><span class="line">main.js: 入口文件</span><br><span class="line">.browserslistrc: 配置文件 =&gt; 兼容支持</span><br><span class="line">.gitignore: 提交到git的时候需要忽略的文件</span><br><span class="line">babel.config.js: babel配置文件 =&gt; 兼容</span><br><span class="line">package-lock.json: 记录包的详细信息 比如: 下载地址、密钥、版本信息等</span><br><span class="line">package.json: 记录工程和包的信息</span><br><span class="line">README.md: 对于整个项目的介绍</span><br><span class="line">public和assets的区别: https://www.cnblogs.com/zhanghuifang/p/16283071.html</span><br></pre></td></tr></table></figure></p>
+<h4 id="render函数"><a href="#render函数" class="headerlink" title="render函数"></a>render函数</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">  /* </span><br><span class="line">	该文件是整个项目的入口文件</span><br><span class="line">*/</span><br><span class="line">//引入Vue</span><br><span class="line">import Vue from <span class="string">&#x27;vue&#x27;</span></span><br><span class="line">//引入App组件，它是所有组件的父组件</span><br><span class="line">import App from <span class="string">&#x27;./App.vue&#x27;</span></span><br><span class="line">//关闭vue的生产提示</span><br><span class="line">Vue.config.productionTip = <span class="literal">false</span></span><br><span class="line"></span><br><span class="line">/* </span><br><span class="line">	关于不同版本的Vue：</span><br><span class="line">	1.vue.js与vue.runtime.xxx.js的区别：</span><br><span class="line">		(1).vue.js是完整版的Vue，包含：核心功能+模板解析器。</span><br><span class="line">		(2).vue.runtime.xxx.js是运行版的Vue，只包含：核心功能；没有模板解析器。</span><br><span class="line">	2.因为vue.runtime.xxx.js没有模板解析器，所以不能使用template配置项，需要使用render函数接收到的createElement函数去指定具体内容。</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//创建Vue实例对象---vm</span><br><span class="line">new Vue(&#123;</span><br><span class="line">	el:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">	//render函数完成了这个功能：将App组件放入容器中</span><br><span class="line">  render: h =&gt; h(App),</span><br><span class="line">	// render:q=&gt; q(<span class="string">&#x27;h1&#x27;</span>,<span class="string">&#x27;你好啊&#x27;</span>)</span><br><span class="line"></span><br><span class="line">	// template:`&lt;h1&gt;你好啊&lt;/h1&gt;`,</span><br><span class="line">	// components:&#123;App&#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>cli默认配置<br>查看默认配置 vue inspect &gt; output.js</p>
+<p>输出的文件内容不允许修改</p>
+<p>如需修改在项目根目录下添加vue.config.js来自定义配置</p>
+<h3 id="传参方式"><a href="#传参方式" class="headerlink" title="传参方式"></a>传参方式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">  1. 父组件通过props向下传递数据给子组件。在引入的子组件中绑定自定义属性 = 数据名</span><br><span class="line">子组件通过props中定义绑定的自定义属性接收,  注：组件中的数据共有三种形式：data、props、computed</span><br><span class="line">子组件向父组件传值（通过事件形式） 父组件使用子组件,  子事件中通过<span class="variable">$emit</span>触发父组件绑定的事件并把参数传过去</span><br><span class="line"></span><br><span class="line">2. <span class="variable">$attrs</span>和<span class="variable">$listeners</span>: 多级组件嵌套需要传递数据时，通常使用的方法是通过vuex。但如果仅仅是传递数据，而不做中间处理，使用 vuex 处理，未免有点大材小用</span><br><span class="line"><span class="variable">$attrs</span>:包含了父作用域中不被 prop 所识别 (且获取) 的特性绑定 (class 和 style 除外)。当一个组件没有声明任何 prop 时，这里会包含所有父作用域的绑定 (class 和 style 除外)，并且可以通过 v-bind=<span class="string">&quot;<span class="variable">$attrs</span>&quot;</span> 传入内部组件。</span><br><span class="line">通常配合 interitAttrs 选项一起使用。如果你不希望组件的根元素继承特性，你可以在组件的选项中设置 inheritAttrs: <span class="literal">false</span></span><br><span class="line"><span class="variable">$listeners</span>:包含了父作用域中的 (不含 .native 修饰器的) v-on 事件监听器。它可以通过 v-on=<span class="string">&quot;<span class="variable">$listeners</span>&quot;</span> 传入内部组件</span><br><span class="line">简单来说: <span class="variable">$attrs</span> 与 <span class="variable">$listeners</span>是两个对象, <span class="variable">$attrs</span>里存放的是父组件中绑定的非 Props 属性,<span class="variable">$listeners</span>里存放的是父组件中绑定的非原生事件。</span><br><span class="line"></span><br><span class="line">3. 中央事件总线 如果两个组件不是父子关系呢？这种情况下可以使用中央事件总线的方式。</span><br><span class="line">新建一个Vue事件bus对象，然后通过bus.<span class="variable">$emit</span>触发事件，bus.<span class="variable">$on</span>监听触发的事件。</span><br><span class="line">平级(兄弟)组件之间的通信 一个全局的发布订阅方式  eventBus 比较适合简单的数据流</span><br><span class="line"></span><br><span class="line">4. provide和inject 他们成对出现，用于父级组件向下传递数据</span><br><span class="line">父组件中通过provide来提供变量，然后在子组件中通过inject来注入变量。不论子组件有多深，只要调用了inject,那么就可以注入provide中的数据。而不是局限于只能从当前父组件的prop属性来获取数据，只要在父组件的生命周期内，子组件都可以调用。 provide / inject API 主要解决了跨级组件间的通信问题，不过它的使用场景，主要是子组件获取上级组件的状态，跨级组件间建立了一种主动提供与依赖注入的关系</span><br><span class="line"></span><br><span class="line">5. <span class="variable">$parent</span> / <span class="variable">$children</span> </span><br><span class="line"><span class="variable">$parent</span> / <span class="variable">$children</span> : 访问父/子实例</span><br><span class="line">需要注意的是：这两种都是直接得到组件实例，使用后可以直接调用组件的方法或访问数据。</span><br><span class="line">这种方法的弊端是，无法在兄弟间通信,另外,<span class="variable">$parent</span>只能是直系后代获取，多个层级后代组件就只能<span class="variable">$parent</span>.<span class="variable">$parent</span>, 同时父级获取孙子级<span class="variable">$children</span>[0].<span class="variable">$children</span>[0]</span><br><span class="line"></span><br><span class="line">6. ref: 如果在普通的 DOM 元素上使用，引用指向的就是 DOM 元素；如果用在子组件上，引用就指向组件实例, 所以可以访问子组件的数据和方法, 通过调用方法实现父传子</span><br><span class="line"></span><br><span class="line">7. vuex处理组件之间的数据交互</span><br><span class="line">如果业务逻辑复杂，很多组件之间需要同时处理一些公共的数据，这个时候使用上面这一些方法可能不利于项目的维护，vuex的做法就是将这一些公共的数据抽离出来，然后其他组件就可以对这个公共数据进行读写操作，这样达到了解耦的目的。</span><br><span class="line"></span><br><span class="line">8. slot插槽 此方式用于父组件向子组件传递<span class="string">&quot;标签数据&quot;</span>。也即子组件先有一个<span class="string">&quot;占位符&quot;</span>, 等待父组件传入具体的标签，子组件再进行渲染。注意： 因为传递的具体的标签是在父组件，所以操作也应该放在父组件中。也就是说应该在父组件运行好之后再传入子组件。 </span><br><span class="line">v-slot: +插槽名+ =<span class="string">&quot;自定义数据名&quot;</span>，子组件所传参数都是其属性 :自定义数据名=父级传来的自定义数据名</span><br><span class="line">在某个组件中写出插槽的位置和name 在其它组件中通过slot与name关联</span><br><span class="line"></span><br><span class="line">总结: 常见使用场景如下</span><br><span class="line">父向子传递数据是通过 props，子向父是通过<span class="variable">$emit</span>, </span><br><span class="line">通过父链 / 子链也可以通信(<span class="variable">$parent</span>/<span class="variable">$children</span>)</span><br><span class="line">ref 也可以访问组件实例; provide/inject; <span class="variable">$attrs</span>/<span class="variable">$listeners</span></span><br><span class="line">兄弟通信 Bus; Vuex</span><br><span class="line">跨级通信 Bus; Vuex; provide/inject; <span class="variable">$attrs</span>/<span class="variable">$listeners</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h3><p>  根据url分配到对应的应用程序,作用就是解析url,调用对应的控制器。路由时指把一个数据从一个地方传到另一个地方<br>  vue路由有助于在浏览器的url或历史记录与vue组件之间建立链接<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">&lt;!-- 使用router-link组件来导航 --&gt;</span><br><span class="line">&lt;!-- 通过传入`to`属性指定链接 --&gt;</span><br><span class="line">&lt;!-- router-link 默认会被渲染成一个&lt;a&gt;&lt;/a&gt;标签 --&gt;</span><br><span class="line">&lt;router-link to=<span class="string">&quot;/home&quot;</span>&gt;home&lt;/router-link&gt;</span><br><span class="line">&lt;router-link to=<span class="string">&quot;/news&quot;</span>&gt;news&lt;/router-link&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;!-- 路由出口 --&gt;</span><br><span class="line">&lt;!-- 路由匹配到的组件渲染在这里 --&gt;</span><br><span class="line">&lt;router-view&gt;&lt;/router-view&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="简易的前端路由"><a href="#简易的前端路由" class="headerlink" title="简易的前端路由"></a>简易的前端路由</h4><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">      &lt;template&gt;</span><br><span class="line">  &lt;div class=<span class="string">&quot;app-container&quot;</span>&gt;</span><br><span class="line">    &lt;h1&gt;App 根组件&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">    &lt;a href=<span class="string">&quot;#/home&quot;</span>&gt;首页&lt;/a&gt;</span><br><span class="line">    &lt;a href=<span class="string">&quot;#/movie&quot;</span>&gt;电影&lt;/a&gt;</span><br><span class="line">    &lt;a href=<span class="string">&quot;#/about&quot;</span>&gt;关于&lt;/a&gt;</span><br><span class="line">    &lt;hr /&gt;</span><br><span class="line">    &lt;component :is=<span class="string">&quot;comName&quot;</span>&gt;&lt;/component&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">// 导入组件</span><br><span class="line">import Home from <span class="string">&#x27;@/components/Home.vue&#x27;</span></span><br><span class="line">import Movie from <span class="string">&#x27;@/components/Movie.vue&#x27;</span></span><br><span class="line">import About from <span class="string">&#x27;@/components/About.vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> default &#123;</span><br><span class="line">  name: <span class="string">&#x27;App&#x27;</span>,</span><br><span class="line">  // 注册组件</span><br><span class="line">  components: &#123;</span><br><span class="line">    Home,</span><br><span class="line">    Movie,</span><br><span class="line">    About,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="function"><span class="title">data</span></span>() &#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">      comName: <span class="string">&#x27;Home&#x27;</span>,</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  // 在mounted生命周期中监听<span class="built_in">hash</span>的变化</span><br><span class="line">  <span class="function"><span class="title">mounted</span></span>() &#123;</span><br><span class="line">    window.onhashchange = () =&gt; &#123;</span><br><span class="line">      switch (location.hash) &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">&#x27;#/movie&#x27;</span>:</span><br><span class="line">          this.comName = <span class="string">&#x27;Movie&#x27;</span></span><br><span class="line">          <span class="built_in">break</span></span><br><span class="line">        <span class="keyword">case</span> <span class="string">&#x27;#/home&#x27;</span>:</span><br><span class="line">          this.comName = <span class="string">&#x27;Home&#x27;</span></span><br><span class="line">        <span class="keyword">case</span> <span class="string">&#x27;#/about&#x27;</span>:</span><br><span class="line">          this.comName = <span class="string">&#x27;About&#x27;</span></span><br><span class="line">          <span class="built_in">break</span></span><br><span class="line">        default:</span><br><span class="line">          this.comName = <span class="string">&#x27;Home&#x27;</span></span><br><span class="line">          <span class="built_in">break</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style lang=<span class="string">&quot;less&quot;</span> scoped&gt;</span><br><span class="line">.app-container &#123;</span><br><span class="line">  background-color: <span class="comment">#efefef;</span></span><br><span class="line">  overflow: hidden;</span><br><span class="line">  margin: 10px;</span><br><span class="line">  padding: 15px;</span><br><span class="line">  &gt; a &#123;</span><br><span class="line">    margin-right: 10px;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+</code></pre>
+<h4 id="vue-router"><a href="#vue-router" class="headerlink" title="vue-router"></a>vue-router</h4><p>vue的一个插件库,是vue.js官方给出的路由解决方案,他只能结合vue项目进行使用,可以轻松的管理项目中组件的切换</p>
+<h5 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h5><p>1.安装vue-router，命令：npm i vue-router@3<br>2.引入插件: import VueRouter form ‘vue-router’<br>3.引入插件: import VueRouter form ‘vue-router’<br>4.编写router配置项：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">  //引入VueRouter</span><br><span class="line">import VueRouter from <span class="string">&#x27;vue-router&#x27;</span></span><br><span class="line">//引入Vue</span><br><span class="line">import Vue from <span class="string">&#x27;vue&#x27;</span></span><br><span class="line">//使用vueRouter</span><br><span class="line">Vue.use(VueRouter)</span><br><span class="line">//引入路由组件</span><br><span class="line">import About from <span class="string">&#x27;../components/About&#x27;</span></span><br><span class="line">import Home from <span class="string">&#x27;../components/Home&#x27;</span></span><br><span class="line"></span><br><span class="line">//创建router实例对象，去管理一组一组的路由规则</span><br><span class="line">const router = new VueRouter(&#123;</span><br><span class="line">	routes:[</span><br><span class="line">		&#123;</span><br><span class="line">			path:<span class="string">&#x27;/about&#x27;</span>,</span><br><span class="line">			component:About</span><br><span class="line">		&#125;,</span><br><span class="line">		&#123;</span><br><span class="line">			path:<span class="string">&#x27;/home&#x27;</span>,</span><br><span class="line">			component:Home</span><br><span class="line">		&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">//暴露router</span><br><span class="line"><span class="built_in">export</span> default router</span><br><span class="line">//main.js中引入挂载router</span><br></pre></td></tr></table></figure>
+<p>切记<br>1.路由组件通常存放在pages或者view文件夹，一般组件(可复用)通常存放在components文件夹。<br>2.通过切换，“隐藏”了的路由组件，默认是被销毁掉的，需要的时候再去挂载（keep-alive）。<br>3.每个组件都有自己的$route属性，里面存储着自己的路由信息。<br>4.整个应用只有一个router，可以通过组件的$router属性获取到。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">  router : 是路由操作对象，只写对象</span><br><span class="line">route : 路由信息对象，只读对象</span><br><span class="line"></span><br><span class="line">// 操作 路由跳转</span><br><span class="line">this.<span class="variable">$router</span>.push(&#123;</span><br><span class="line">      name:<span class="string">&#x27;hello&#x27;</span>,</span><br><span class="line">      params:&#123;</span><br><span class="line">          name:<span class="string">&#x27;word&#x27;</span>,</span><br><span class="line">          age:<span class="string">&#x27;11&#x27;</span></span><br><span class="line">     &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// 读取 路由参数接收</span><br><span class="line">this.name = this.route.params.name;</span><br><span class="line">this.age = this.route.params.age;</span><br></pre></td></tr></table></figure>
+<h4 id="嵌套路由"><a href="#嵌套路由" class="headerlink" title="嵌套路由"></a>嵌套路由</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">  routes:[</span><br><span class="line">	&#123;</span><br><span class="line">		path:<span class="string">&#x27;/about&#x27;</span>,</span><br><span class="line">		component:About,</span><br><span class="line">	&#125;,</span><br><span class="line">	&#123;</span><br><span class="line">		path:<span class="string">&#x27;/home&#x27;</span>,</span><br><span class="line">		component:Home,</span><br><span class="line">		children:[ //通过children配置子级路由</span><br><span class="line">			&#123;</span><br><span class="line">				path:<span class="string">&#x27;news&#x27;</span>, //此处一定不要写：/news</span><br><span class="line">				component:News</span><br><span class="line">			&#125;,</span><br><span class="line">			&#123;</span><br><span class="line">				path:<span class="string">&#x27;message&#x27;</span>,//此处一定不要写：/message</span><br><span class="line">				component:Message</span><br><span class="line">			&#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                path: <span class="string">&#x27;user&#x27;</span>,</span><br><span class="line">                // 路由懒加载写法</span><br><span class="line">                component:()=&gt; import(/*webpackChunkName*:<span class="string">&#x27;user&#x27;</span>/, User)</span><br><span class="line">            &#125;</span><br><span class="line">		]</span><br><span class="line">	&#125;</span><br><span class="line">] </span><br></pre></td></tr></table></figure>
+<h4 id="路由懒加载"><a href="#路由懒加载" class="headerlink" title="路由懒加载"></a>路由懒加载</h4><p>  懒加载简单来说就是延迟加载或按需加载，就是用到的时候再进行加载。<br>  作用: 首屏组件加载速度更快一些，解决白屏问题；更好的客户体验；也是性能优化的一种方式；</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">  const routes = [</span><br><span class="line">  &#123;</span><br><span class="line">    path: <span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">    redirect: <span class="string">&#x27;/home&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    path: <span class="string">&#x27;/home&#x27;</span>,</span><br><span class="line">    name: <span class="string">&#x27;home&#x27;</span>,</span><br><span class="line">    // 首屏没有做路由懒加载</span><br><span class="line">    component: HomeView</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    path: <span class="string">&#x27;/center&#x27;</span>,</span><br><span class="line">    name: <span class="string">&#x27;center&#x27;</span>,</span><br><span class="line">    // 路由懒加载: 懒加载简单来说就是延迟加载或按需加载，就是用到的时候再进行加载。</span><br><span class="line">    // 作用: 首屏组件加载速度更快一些，解决白屏问题；更好的客户体验；</span><br><span class="line">    // 也是性能优化的一种方式；</span><br><span class="line">    component: () =&gt; import(/* webpackChunkName: <span class="string">&quot;center&quot;</span> */ <span class="string">&#x27;../views/Center.vue&#x27;</span>)</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    path: <span class="string">&#x27;/search&#x27;</span>,</span><br><span class="line">    component: ()=&gt; import(<span class="string">&#x27;../views/Search.vue&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br><span class="line">const router = new VueRouter(&#123;</span><br><span class="line">  routes</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="路由传参-query"><a href="#路由传参-query" class="headerlink" title="路由传参 query"></a>路由传参 query</h4><p>1.传递参数<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">    &lt;!-- 跳转并携带query参数，to的字符串写法 --&gt;</span><br><span class="line">&lt;router-link :to=<span class="string">&quot;/home/message/detail?id=666&amp;title=你好&quot;</span>&gt;跳转&lt;/router-link&gt;</span><br><span class="line">				</span><br><span class="line">&lt;!-- 跳转并携带query参数，to的对象写法 --&gt;</span><br><span class="line">&lt;router-link </span><br><span class="line">	:to=<span class="string">&quot;&#123;</span></span><br><span class="line"><span class="string">		path:&#x27;/home/message/detail&#x27;,</span></span><br><span class="line"><span class="string">		query:&#123;</span></span><br><span class="line"><span class="string">		   id:666,</span></span><br><span class="line"><span class="string">            title:&#x27;你好&#x27;</span></span><br><span class="line"><span class="string">		&#125;</span></span><br><span class="line"><span class="string">	&#125;&quot;</span></span><br><span class="line">&gt;跳转&lt;/router-link&gt;</span><br></pre></td></tr></table></figure><br>2.接收参数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$route</span>.query.id</span><br><span class="line"><span class="variable">$route</span>.query.title</span><br></pre></td></tr></table></figure>
+
+<h4 id="路由传参-params"><a href="#路由传参-params" class="headerlink" title="路由传参 params"></a>路由传参 params</h4><p>动态路由是指:把hash中可变的部分定义为参数项,从而用来提高路由规则可复用性,在vue-router中使用:来定义路由的参数项<br>1.配置路由,声明params接收参数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">  &#123;</span><br><span class="line">	path:<span class="string">&#x27;/home&#x27;</span>,</span><br><span class="line">	component:Home,</span><br><span class="line">	children:[</span><br><span class="line">		&#123;</span><br><span class="line">			path:<span class="string">&#x27;news&#x27;</span>,</span><br><span class="line">			component:News</span><br><span class="line">		&#125;,</span><br><span class="line">		&#123;</span><br><span class="line">			component:Message,</span><br><span class="line">			children:[</span><br><span class="line">				&#123;</span><br><span class="line">					name:<span class="string">&#x27;xiangqing&#x27;</span>,</span><br><span class="line">					path:<span class="string">&#x27;detail/:id/:title&#x27;</span>, //使用占位符声明接收params参数</span><br><span class="line">					component:Detail</span><br><span class="line">				&#125;</span><br><span class="line">			]</span><br><span class="line">		&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.传递参数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">  &lt;!-- 跳转并携带params参数，to的字符串写法 --&gt;</span><br><span class="line">&lt;router-link :to=<span class="string">&quot;/home/message/detail/666/你好&quot;</span>&gt;跳转&lt;/router-link&gt;</span><br><span class="line">				</span><br><span class="line">&lt;!-- 跳转并携带params参数，to的对象写法 --&gt;</span><br><span class="line">&lt;router-link </span><br><span class="line">	:to=<span class="string">&quot;&#123;</span></span><br><span class="line"><span class="string">		name:&#x27;xiangqing&#x27;,</span></span><br><span class="line"><span class="string">		params:&#123;</span></span><br><span class="line"><span class="string">		   id:666,</span></span><br><span class="line"><span class="string">            title:&#x27;你好&#x27;</span></span><br><span class="line"><span class="string">		&#125;</span></span><br><span class="line"><span class="string">	&#125;&quot;</span></span><br><span class="line">&gt;跳转&lt;/router-link&gt;</span><br></pre></td></tr></table></figure>
+<p>切记<br>1.路由携带params参数时，若使用to的对象写法，则不能使用path配置项，必须使用name配置！<br>2.params是路由的一部分，必须要在路由path后面添加参数名。query是拼接在url后面的参数，没有也没关系!<br>3.params一旦设置在路由，params就是路由的一部分，如果这个路由有params传参，但是在跳转的时候没有传这个参数，会导致跳转失败或者页面会没有内容。</p>
+<h4 id="路由守卫"><a href="#路由守卫" class="headerlink" title="路由守卫"></a>路由守卫</h4><p>1.作用：对路由进行权限控制</p>
+<p>2.分类：全局守卫、独享守卫、组件内守卫</p>
+<p>3.全局守卫:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">  //全局前置守卫：初始化时执行、每次路由切换前执行</span><br><span class="line">router.beforeEach((to,from,next)=&gt;&#123;</span><br><span class="line">	console.log(&#x27;beforeEach&#x27;,to,from)</span><br><span class="line">	if(to.meta.isAuth)&#123; //判断当前路由是否需要进行权限控制</span><br><span class="line">		if(localStorage.getItem(&#x27;username&#x27;) === &#x27;admin&#x27;)&#123; //权限控制的具体规则</span><br><span class="line">			next() //放行</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			alert(&#x27;暂无权限查看&#x27;)</span><br><span class="line">			// next(&#123;name:&#x27;guanyu&#x27;&#125;)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;else&#123;</span><br><span class="line">		next() //放行</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">//全局后置守卫：初始化时执行、每次路由切换后执行</span><br><span class="line">router.afterEach((to,from)=&gt;&#123;</span><br><span class="line">	console.log(&#x27;afterEach&#x27;,to,from)</span><br><span class="line">	if(to.meta.title)&#123; </span><br><span class="line">		document.title = to.meta.title //修改网页的title</span><br><span class="line">	&#125;else&#123;</span><br><span class="line">		document.title = &#x27;vue_test&#x27;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>4.独享守卫</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">  beforeEnter(to,from,next)&#123;</span><br><span class="line">	console.log(<span class="string">&#x27;beforeEnter&#x27;</span>,to,from)</span><br><span class="line">	<span class="keyword">if</span>(to.meta.isAuth)&#123; //判断当前路由是否需要进行权限控制</span><br><span class="line">		<span class="keyword">if</span>(localStorage.getItem(<span class="string">&#x27;username&#x27;</span>) === <span class="string">&#x27;admin&#x27;</span>)&#123;</span><br><span class="line">			next()</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			alert(<span class="string">&#x27;暂无权限查看&#x27;</span>)</span><br><span class="line">			// next(&#123;name:<span class="string">&#x27;guanyu&#x27;</span>&#125;)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		next()</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>5.组件内的守卫</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  //进入守卫：通过路由规则，进入该组件时被调用</span><br><span class="line">beforeRouteEnter (to, from, next) &#123;</span><br><span class="line">&#125;,</span><br><span class="line">//离开守卫：通过路由规则，离开该组件时被调用</span><br><span class="line">beforeRouteLeave (to, from, next) &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="路由器的两种工作模式"><a href="#路由器的两种工作模式" class="headerlink" title="路由器的两种工作模式"></a>路由器的两种工作模式</h4><p>1.对于一个url来说，什么是hash值？—— #及其后面的内容就是hash值。<br>2.hash值不会包含在 HTTP 请求中，即：hash值不会带给服务器。<br>3.hash模式：<br>  3.1.地址中永远带着#号，不美观 。<br>  3.2.若以后将地址通过第三方手机app分享，若app校验严格，则地址会被标记为不合法。<br>  3.3.兼容性较好。<br>4.history模式：<br>  4.1.地址干净，美观 。<br>  4.2.兼容性和hash模式相比略差。底层是h5 api history对象<br>  4.3.应用部署上线时需要后端人员支持，解决刷新页面服务端404的问题。可以安装connect-history-api-fallback插件解决</p>
+
+</article>
+    
+    
+
+</div>
+<div id="post-next-prev" class="row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            其他文章
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2023/08/30/React/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" #.">
+                    未分类
+                </a>
+            </div>
+            <h5>
+                <a href="/2023/08/30/React/" class="trm-anima-link">
+                    React
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>23/08/30</li>
+                <li>16:51</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+    
+
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <div class="trm-counter-up trm-scroll-animation trm-active-el" data-scroll="" data-scroll-offset="40">
+  <div class="trm-counter-number">
+    <span class="trm-counter">99</span>
+    <span class="trm-counter-symbol">+</span>
+  </div>
+  <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+  <div class="trm-label">宝剑锋从磨砺出，梅花香苦自苦寒来。</div>
+</div>
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+
+            
+
+          </div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+
+  </div>
+  <!-- app wrapper end -->
+
+  
+<div class="trm-fixed-container">
+    
+        <div class="trm-fixed-btn post-toc-btn" data-title="目录">
+            <i class="iconfont fas fa-th-list"></i>
+        </div>
+    
+    
+        <div class="trm-fixed-btn" data-title="阅读模式" onclick="asyncFun.switchReadMode()">
+            <i class="iconfont fas fa-book-reader"></i>
+        </div>
+    
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部">
+        <i class="iconfont fas fa-arrow-up"></i>
+    </div>
+</div>
+  
+  <!-- Plugin -->
+
+
+
+
+    
+    
+<script src="https://npm.elemecdn.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+        <script src="/js/plugins/typing.js?v=2.1.0-beta.1"></script>
+    
+
+    
+
+    <!-- 数学公式 -->
+    
+
+    <!-- 评论插件 -->
+    
+        
+
+        
+    
+
+
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+
+
+<script id="async-script" src="/js/main.js?v=2.1.0-beta.1"></script>
+
+</body>
+
+</html>
