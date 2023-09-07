@@ -11,12 +11,12 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue2">
 <meta property="og:url" content="http://example.com/2023/08/30/Vue/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="小橙的博客">
 <meta property="og:description" content="vuevue介绍Vue 是一套用于构建用户界面的 渐进式框架 。 与其它大型框架不同的是，Vue 采用自底向上增量开发的设计。 Vue 的核心库只关注视图层，并且非常容易学习，非常容易与其它库或已有项目整合。另一方面，Vue 完全有能力驱动采用单文件组件和Vue生态系统支持的库开发的复杂单页应用。 Vue.js 的目标是通过尽可能简单的 API 实现响应的数据绑定和组合的视图组件。 最初它不过是个">
 <meta property="og:locale">
 <meta property="og:image" content="http://example.com/img/404.jpg">
 <meta property="article:published_time" content="2023-08-30T02:06:43.282Z">
-<meta property="article:modified_time" content="2023-09-04T02:42:14.802Z">
+<meta property="article:modified_time" content="2023-09-07T02:46:07.165Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/img/404.jpg">
@@ -65,7 +65,7 @@
 
 <!-- Variable -->
 <script>window.ASYNC_CONFIG = {"hostname":"example.com","author":"John Doe","root":"/","typed_text":["欢迎来到小橙的博客"],"theme_version":"2.1.0-beta.1","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"log.svg","icon16":"log.svg","icon32":"log.svg","appleTouchIcon":"log.svg","webmanifest":"/site.webmanifest","visibilitychange":true,"hidden":"failure.ico","showText":"(/≧▽≦/)咦！又好了！","hideText":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://npm.elemecdn.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false}};</script>
-<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2023-09-04 10:42:14"};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2023-09-07 10:46:07"};</script>
 
 <!-- Theme mode css -->
 <link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.1.0-beta.1" id="trm-switch-style">
@@ -158,16 +158,6 @@
                     首页
                 </a>
                 
-                <ul>
-                    
-                    <li>
-                        <a  href="/archives2/" target="">
-                            archives2
-                        </a>
-                    </li>
-                    
-                </ul>
-                
             </li>
             
             <li class="menu-item-has-children ">
@@ -178,7 +168,7 @@
             </li>
             
             <li class="menu-item-has-children ">
-                <a  href="/class/" target="">
+                <a  href="/categories/" target="">
                     分类
                 </a>
                 
@@ -580,8 +570,8 @@ v-for:v-for可用来遍历数组、对象、字符串。
         
         <div class="trm-card-descr">
             <div class="trm-label trm-category trm-mb-20">
-                <a href=" #.">
-                    未分类
+                <a href=" /categories/React/">
+                    React
                 </a>
             </div>
             <h5>
@@ -628,6 +618,10 @@ v-for:v-for可用来遍历数组、对象、字符串。
             <!-- body end -->
 
             
+
+    <div id="post-toc" class="post-toc">
+        <ol class="toc"><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#vue"  data-scroll-to="#vue"><span class="toc-number">1.</span> <span class="toc-text">vue</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#vue介绍"  data-scroll-to="#vue介绍"><span class="toc-number">1.1.</span> <span class="toc-text">vue介绍</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#vue发展历程"  data-scroll-to="#vue发展历程"><span class="toc-number">1.2.</span> <span class="toc-text">vue发展历程</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#vue初体验"  data-scroll-to="#vue初体验"><span class="toc-number">1.3.</span> <span class="toc-text">vue初体验</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#MVC和MVVM"  data-scroll-to="#MVC和MVVM"><span class="toc-number">1.4.</span> <span class="toc-text">MVC和MVVM</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#MVVM有两个方向"  data-scroll-to="#MVVM有两个方向"><span class="toc-number">1.5.</span> <span class="toc-text">MVVM有两个方向</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#组件和模块"  data-scroll-to="#组件和模块"><span class="toc-number">1.6.</span> <span class="toc-text">组件和模块</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#vue模板使用"  data-scroll-to="#vue模板使用"><span class="toc-number">1.7.</span> <span class="toc-text">vue模板使用</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#vue生命周期"  data-scroll-to="#vue生命周期"><span class="toc-number">1.8.</span> <span class="toc-text">vue生命周期</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#watch"  data-scroll-to="#watch"><span class="toc-number">1.9.</span> <span class="toc-text">watch</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#computed和watch"  data-scroll-to="#computed和watch"><span class="toc-number">1.10.</span> <span class="toc-text">computed和watch</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#vue-cli"  data-scroll-to="#vue-cli"><span class="toc-number">1.11.</span> <span class="toc-text">vue-cli</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#传参方式"  data-scroll-to="#传参方式"><span class="toc-number">1.12.</span> <span class="toc-text">传参方式</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#路由"  data-scroll-to="#路由"><span class="toc-number">1.13.</span> <span class="toc-text">路由</span></a></li></ol></li></ol>
+    </div>
 
           </div>
         </div>
